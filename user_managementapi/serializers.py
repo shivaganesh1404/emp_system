@@ -12,8 +12,8 @@ class UserProfileSerializer(serializers.ModelSerializer):
                   'mobile_number',
                   'email',
                   'dob',
-                  'profile_picture',
-                   'password')
+                  'password'
+    )
 
 
 class ProfileGetSerializer(serializers.ModelSerializer):
@@ -27,5 +27,19 @@ class ProfileGetSerializer(serializers.ModelSerializer):
                   'mobile_number',
                   'email',
                   'dob',
-                  'profile_picture',
                   'password')
+
+
+class ProfileViewSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UserProfile
+        fields = (
+                  'id',
+                  'first_name',
+                  'last_name',
+                  'mobile_number',
+                  'email',
+                  'dob',
+                  'password')
+
